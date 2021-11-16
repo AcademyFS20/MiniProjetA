@@ -1,10 +1,55 @@
-import React, {useState, useEffect, useReducer} from 'react'
+import React from 'react';
+import TableHeader from './components/TableHeader/TableHeader';
+import Book from './components/Book/Book';
+import Button from './components/Button/Button';
+import Entree from './components/Entree/Entree';
+import {dataBook} from './helpers/Data';
+import ListeDeroulante from './components/ListeDeroulante/ListeDeroulante';
+import Form from './containers/Form/Form';
+import Books from './containers/Books/Books';
+
+class App extends React.Component {
+
+    // state={dataBook}
+
+    // handler = () => {
+
+    //     this.setState({toggle:true})
+    // }
+
+    // cacher = () =>{
+
+    //     this.setState({toggle:false})
+    // }
+
+    render(){
+        // this.setState({toggle:true})
+        //  console.log(this.state.toggle)
+
+        // let data = this.state.dataBook;
+        // const id=data.map(({id})=>id)
+        // let {id,title, nbpages, author, category} = data;
+        // console.log(id)
+        
+        return (
+            <div>
+                <Books/>
+            </div>
+        )
+    }  
+}
+
+export default App
+
+/******************** useReducer test ****************************/
+
+// import React, {useState, useEffect, useReducer} from 'react'
 /* import User from "./components/User"; */
 // import ControlledInput from "./components/ControlledInput";
 
-const initialState = {count: 0};
+// const initialState = {count: 0};
 
-function reducer(state, action) {
+/* function reducer(state, action) {
   switch (action.type) {
     case 'increment':
       return {count: state.count + 1};
@@ -13,15 +58,15 @@ function reducer(state, action) {
     default:
       throw new Error();
   }
-}
+} */
 
-function App(){
+/* function App(){
     const [state, dispatch] = useReducer(reducer, initialState);
 
 
     return(
         <div>
-            {/* <ControlledInput/> */}
+            <ControlledInput/>
             Total : {state.count}
       <button onClick={() => dispatch({type: 'decrement'})}>-</button>
       <button onClick={() => dispatch({type: 'increment'})}>+</button>
@@ -31,9 +76,9 @@ function App(){
     );
 }
 
-export default App
+export default App */
 
-/******************* api app *******************/
+/*********************** api app ******************************/
 
 /* const API_URL=`https://api.github.com/users`;
 
