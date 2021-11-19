@@ -16,9 +16,9 @@ function Book(props) {
                 <td>
 
                     <Button value='Update'
-                    className="btn btn-outline-warning"/>
+                    className="btn btn-outline-warning" click={props.modify}/>
                     <Button value='Delete'
-                    className="btn btn-outline-danger"/>
+                    className="btn btn-outline-danger" click={props.supprimer}/>
 
                 </td>
            

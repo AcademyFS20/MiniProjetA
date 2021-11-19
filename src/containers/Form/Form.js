@@ -14,7 +14,10 @@ class Form extends React.Component {
             author:'',
             category:'',
             nbpages:0,
-            errorTitle:""
+            errorTitle:'',
+            errorAuthor:'',
+            errorNbpages:0,
+            errorCategory:''
         
     }
 
@@ -35,7 +38,7 @@ class Form extends React.Component {
 
     }
 
-    validate = (title,category) => {
+    validate = (title,category,author,nbpages) => {
      
         let error = '';
 
@@ -57,25 +60,16 @@ class Form extends React.Component {
     handleSubmit =(e) =>{
 
         e.preventDefault();
-         if(this.props.validate(this.state.title,this.state.category)){
+         if(this.props.validate(this.state.title,this.state.category,this.state.author,this.state.nbpages)){
             
             this.setTitle();
             this.setCategory();
+            this.setAuthor();
+            this.setPages();
         }
     }
 
-    // state = {
-    //     dataBook
-    // }
-
     render(){
-        
-        // let data = this.state.dataBook;
-        // let id=data.map(({id})=>id)
-        // let author=data.map(({author})=>author)
-        // let title=data.map(({title})=>title)
-        // let category=data.map(({category})=>category)
-        // let nbpages=data.map(({nbpages})=>nbpages)
         
         return (
             <form>
